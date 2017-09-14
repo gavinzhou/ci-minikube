@@ -2,8 +2,7 @@ version: 2
 
 jobs:
   build:
-    docker:
-      - image: circleci/golang:1.8
+    machine: true
     environment:
       CHANGE_MINIKUBE_NONE_USER: true
     steps:
@@ -28,7 +27,7 @@ jobs:
             sudo kubectl cluster-info
       - run:
           command: |
-            sudo kubectl run circleci-example --image=redis
+            sudo kubectl run circleci-example --image=nginx
       - run:
           command: |
             sudo kubectl get deployment
