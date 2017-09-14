@@ -17,11 +17,19 @@ jobs:
           environment:
             CHANGE_MINIKUBE_NONE_USER: true
           command: |
-            minikube start --vm-driver=none --kubernetes-version=v1.7.0
+            sudo minikube start --vm-driver=none --kubernetes-version=v1.7.0
+      - run:
+          command: |
             minikube update-context
+      - run:
+          command: |
             JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}'; until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do sleep 1; done
       - run:
           command: |
             kubectl cluster-info
+      - run:
+          command: |
             kubectl run travis-example --image=redis
+      - run:
+          command: |
             kubectl get deployment
