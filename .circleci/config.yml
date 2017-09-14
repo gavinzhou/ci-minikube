@@ -2,7 +2,6 @@ version: 2
 
 jobs:
   build:
-    machine: true
     environment:
       CHANGE_MINIKUBE_NONE_USER: true
     steps:
