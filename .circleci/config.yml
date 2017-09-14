@@ -2,6 +2,8 @@ version: 2
 
 jobs:
   build:
+    docker:
+      - image: circleci/golang:1.8
     environment:
       CHANGE_MINIKUBE_NONE_USER: true
     steps:
