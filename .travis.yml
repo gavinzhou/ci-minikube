@@ -3,8 +3,8 @@ sudo: required
 # This moves Kubernetes specific config files.
 env:
 - CHANGE_MINIKUBE_NONE_USER=true
-- K8S_VERSION=v1.10.0
-- MINIKUBE_VERSION=v0.28.2
+- K8S_VERSION="v1.10.0"
+- MINIKUBE_VERSION="v0.28.2"
 
 before_script:
 # Download kubectl, which is a requirement for using minikube.
