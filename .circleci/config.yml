@@ -14,7 +14,7 @@ jobs:
           command: |
             ## only run 0.25.0 , not work after 0.25.0+
             ## because circleci machine run ubuntu 14
-            curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.25.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+            curl -Lo minikube https://github.com/kubernetes/minikube/releases/download/v0.28.2/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
       - run:
           command: |
             sudo minikube start --vm-driver=none
