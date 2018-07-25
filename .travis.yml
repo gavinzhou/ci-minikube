@@ -25,3 +25,6 @@ script:
 - kubectl cluster-info 
 - kubectl run travis-example --image=redis
 - kubectl get deployment
+
+notifications:
+  email: false
