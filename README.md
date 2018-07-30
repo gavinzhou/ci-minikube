@@ -7,4 +7,4 @@
 
 Show test yaml with minikube on CI
 
-[gavinzhou/prometheus-kubernetes)](https://github.com/gavinzhou/prometheus-kubernetes)
+[gavinzhou/prometheus-kubernetes](https://github.com/gavinzhou/prometheus-kubernetes)
