@@ -4,7 +4,7 @@ sudo: required
 env:
   global:
     - CHANGE_MINIKUBE_NONE_USER=true
-    - K8S_VERSION="v1.11.0"
+    - K8S_VERSION="v1.10.0"
     - MINIKUBE_VERSION="v0.30.0"
 
 before_script:
