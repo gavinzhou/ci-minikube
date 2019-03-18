@@ -7,9 +7,9 @@ jobs:
     machine:
       image: circleci/classic:201808-01
     environment:
-      K8S_VERSION: v1.10.0
+      K8S_VERSION: v1.13.4
       KUBECONFIG: /home/circleci/.kube/config
-      MINIKUBE_VERSION: v0.30.0
+      MINIKUBE_VERSION: v0.35.0
       MINIKUBE_WANTUPDATENOTIFICATION: false
       MINIKUBE_WANTREPORTERRORPROMPT: false
       MINIKUBE_HOME: /home/circleci
@@ -19,7 +19,7 @@ jobs:
       - run:
           name: setup kubectl
           command: |
-            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/${K8S_VERSION}/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/latest/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
             mkdir -p ${HOME}/.kube
             touch ${HOME}/.kube/config
       - run:
